@@ -14,7 +14,7 @@ function App() {
     <BrowserRouter>
       <div className="app-root">
         <Header name="Pratham Hingu" />
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>Loading Page...</div>}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/projects" element={<ProjectsPage />} />
