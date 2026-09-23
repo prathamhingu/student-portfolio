@@ -56,3 +56,24 @@ Observation:
 The application now uses route-level lazy loading, Suspense fallback UI,
 and code splitting to reduce the amount of JavaScript required during the
 initial page load.
+
+
+## Practical 9 - In-Memory Caching and Query Optimization
+
+### Response Time Comparison
+
+The GET /tasks API was tested using Postman with and without in-memory caching.
+
+| Condition | Reading 1 | Reading 2 | Reading 3 | Average |
+|-----------|-----------|-----------|-----------|---------|
+| Cached | 4 ms | 5 ms | 4 ms | 4.33 ms |
+| Uncached | 14 ms | 6 ms | 6 ms | 8.67 ms |
+
+The average response time measured during testing was lower with caching than without caching.
+
+### Cache Configuration
+
+- Library: node-cache
+- TTL: 60 seconds
+- Cache key: `all_tasks`
+- Cache invalidated after POST, PUT, and DELETE operations.
